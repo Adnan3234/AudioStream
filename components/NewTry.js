@@ -45,10 +45,11 @@ const NewTry = () => {
     }, []);
     useEffect(() => {
         if (isMicPermissionGranted) {
+            // const audioContext = new AudioContext({ sampleRate: 16000 });
             const audioContext = new AudioContext();
             console.log(audioContext, '--a context---')
             const audioSource = audioContext.createMediaStreamSource(mediaStreamRef.current);
-            console.log(audioContext, '--audio---');
+            // console.log(audioContext, '--audio---');
             const scriptProcessor = audioContext.createScriptProcessor(1024, 1, 1);
             console.log(scriptProcessor, '0sccript---')
 
@@ -134,7 +135,8 @@ const NewTry = () => {
             // console.log(startObj, '--start- to send-')
             // const client = new WebSocket('ws://13.127.46.155:8092');
             // const client = new WebSocket('wss://2b75-106-194-100-182.ngrok-free.app');
-            const client = new WebSocket('wss://1dd0-122-180-189-184.ngrok-free.app');
+            // const client = new WebSocket('wss://1dd0-122-180-189-184.ngrok-free.app');
+            const client = new WebSocket('wss://94ff-2401-4900-8084-a11d-8051-6dfe-ed23-252f.ngrok-free.app');
             // const client = new WebSocket('wss://helloupi.tonetag.com/wss');
             // const client = new WebSocket('ws://helloupi.tonetag.com/ws');
             clientRef.current = client;
