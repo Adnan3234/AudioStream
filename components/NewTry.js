@@ -45,12 +45,12 @@ const NewTry = () => {
     }, []);
     useEffect(() => {
         if (isMicPermissionGranted) {
-            // const audioContext = new AudioContext({ sampleRate: 16000 });
-            const audioContext = new AudioContext();
+            const audioContext = new AudioContext({ sampleRate: 48000 });
+            // const audioContext = new AudioContext();
             console.log(audioContext, '--a context---')
             const audioSource = audioContext.createMediaStreamSource(mediaStreamRef.current);
             // console.log(audioContext, '--audio---');
-            const scriptProcessor = audioContext.createScriptProcessor(1024, 1, 1);
+            const scriptProcessor = audioContext.createScriptProcessor(2048, 1, 1);
             console.log(scriptProcessor, '0sccript---')
 
             scriptProcessor.addEventListener('audioprocess', (event) => {
